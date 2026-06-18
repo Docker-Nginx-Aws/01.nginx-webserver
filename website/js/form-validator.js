@@ -39,7 +39,9 @@ function validateField(field) {
     clearError(field);
 
     if (!field.value.trim()) {
-        showError(field, field.getAttribute('data-label') + ' is required');
+        const label = field.getAttribute('data-label') || field.name || 'Field';
+        const capitalizedLabel = label.charAt(0).toUpperCase() + label.slice(1);
+        showError(field, capitalizedLabel + ' is required');
         return false;
     }
 

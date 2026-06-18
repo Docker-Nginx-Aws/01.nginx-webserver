@@ -834,3 +834,19 @@ textarea.form-control {
     display: block;
     width: 100%;
 }
+
+/* Form Validation Styles */
+.form-control.error {
+    border-color: var(--danger-color) !important;
+}
+
+.form-control.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.field-error {
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}

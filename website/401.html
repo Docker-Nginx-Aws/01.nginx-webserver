@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>404 — Page Not Found | TechBridge India</title>
+    <title>401 — Unauthorized | TechBridge India</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/error-pages.css">
     <link rel="icon" type="image/png" href="/images/logo.png">
@@ -26,12 +26,12 @@
     <div class="container">
         <div class="error-card">
 
-            <!-- Animated 404 Number -->
+            <!-- Animated 401 Number -->
             <div class="error-code-wrapper">
                 <div class="error-code" aria-hidden="true">
                     <span class="digit" id="digit1">4</span>
-                    <span class="digit zero" id="digit0">0</span>
-                    <span class="digit" id="digit2">4</span>
+                    <span class="digit zero pulse-zero" id="digit0">0</span>
+                    <span class="digit" id="digit2">1</span>
                 </div>
             </div>
 
@@ -46,15 +46,15 @@
                     <text x="50" y="65"
                           text-anchor="middle"
                           font-size="50"
-                          fill="#2563eb">🔍</text>
+                          fill="#2563eb">🔑</text>
                 </svg>
             </div>
 
             <!-- Error Message -->
-            <h1 class="error-title">Page Not Found</h1>
+            <h1 class="error-title">Unauthorized Access</h1>
             <p class="error-description">
-                Oops! The page you are looking for does not exist on this server.
-                It might have been moved, renamed, or never existed.
+                You must authenticate or provide valid credentials to access this resource.
+                If you were previously logged in, your session may have expired.
             </p>
 
             <!-- Requested URL Display -->
@@ -67,10 +67,10 @@
             <div class="error-suggestions">
                 <h2>What you can do:</h2>
                 <ul>
-                    <li>✅ Check the URL for typos in the address bar</li>
-                    <li>✅ Go back to the <a href="/">homepage</a></li>
-                    <li>✅ Use the navigation menu to find what you need</li>
-                    <li>✅ Contact us if you believe this is a bug</li>
+                    <li>✅ Check your credentials (username/password/token)</li>
+                    <li>✅ Log in to your account and try again</li>
+                    <li>✅ Clear your browser session/cookies and reload the page</li>
+                    <li>✅ Contact support if you believe you should have access</li>
                 </ul>
             </div>
 
@@ -101,20 +101,20 @@
 
             <!-- HTTP Info (Educational - for teaching) -->
             <details class="error-http-info">
-                <summary>🎓 What is HTTP 404?</summary>
+                <summary>🎓 What is HTTP 401?</summary>
                 <div class="error-http-body">
                     <p>
-                        <strong>HTTP 404 Not Found</strong> is a standard HTTP response
-                        status code indicating that the server could not find the
-                        requested resource. The server understood the request
-                        (no syntax error), but cannot find the resource at the given URL.
+                        <strong>HTTP 401 Unauthorized</strong> is a standard HTTP response
+                        status code indicating that the client request has not been completed
+                        because it lacks valid authentication credentials for the resource.
                     </p>
                     <p>
-                        <strong>Common causes:</strong> Mistyped URL, deleted page,
-                        moved content without redirect, broken link.
+                        <strong>Common causes:</strong> Missing or incorrect authorization headers,
+                        invalid or expired API keys/session tokens, failed login attempt.
                     </p>
                     <code class="http-example">
-                        HTTP/1.1 404 Not Found<br>
+                        HTTP/1.1 401 Unauthorized<br>
+                        WWW-Authenticate: Basic realm="Secure Area"<br>
                         Server: nginx<br>
                         Content-Type: text/html<br>
                     </code>
@@ -128,12 +128,12 @@
 <!-- Footer -->
 <footer class="error-footer">
     <div class="container">
-        <p>HTTP 404 · Served by Nginx on AWS EC2 · TechBridge India 2025</p>
+        <p>HTTP 401 · Served by Nginx on AWS EC2 · TechBridge India 2025</p>
     </div>
 </footer>
 
 <script>
-    // Display the URL that triggered the 404
+    // Display the URL that triggered the 401
     document.getElementById('requestedUrl').textContent =
         window.location.pathname + window.location.search;
 
