@@ -69,6 +69,7 @@ jobs:
       # Step 5: Build Docker image and push to Docker Hub
       # --cache-from: use cached layers from previous builds (faster CI)
       - name: Build and Push Docker Image
+        id: build-push
         uses: docker/build-push-action@v5
         with:
           context: .

@@ -6,7 +6,7 @@
 # Stage 1: Use official Nginx Alpine image
 # Alpine Linux is only ~5MB. The full nginx:alpine image is ~23MB
 # Compare: nginx:latest (Debian) is ~187MB
-FROM nginx:1.29-alpine
+FROM nginx:1.27-alpine
 
 # Metadata labels (good practice for production images)
 LABEL maintainer="your-email@example.com"
